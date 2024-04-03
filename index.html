@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API - Get</title>
+ </head>
+ <body>
+    <h1>Welcome</h1>
+    <button type="button" id="load">Load Data</button>
+    <div id="demo"></div>
+    
+ </body>
+ <script type="text/javascript">
+      document.getElementById("load").onclick(()=>{ fetch("loadme.html").then((
+         res)=> {
+            return res.text();
+         })
+      .then((res)=>{
+         document.getElementById("demo").innerHTML = res;
+      })
+   .catch((err)=>{
+      console.log(err);
+   });
+});
+document.getElementById("loadjson").onclick(()=>{ 
+   fetch("data.json").then((
+         res)=> {
+            return res.json();
+         })
+   .catch((err)=>{
+      console.log(res);
+      console.log(res.data);
+      console.log(res.nama);
+   });
+});
+    </script>
+ </html>
+
+ 
